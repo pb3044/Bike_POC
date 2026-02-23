@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Straight Up Cycles — Victoria's Performance Bike Specialists</title>
+  <meta name="description" content="Straight Up Cycles — Victoria BC's only Campagnolo, Colnago & Argon 18 dealer. Expert bike fitting, custom builds, service & used bikes since 2000." />
+
+  <!-- Local CSS Assets -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/fonts.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Straight Up Cycles",
+    "image": "https://straightupcycles.ca/og-image.jpg",
+    "url": "https://straightupcycles.ca",
+    "telephone": "+12504801944",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "#4-3198 Quadra St",
+      "addressLocality": "Victoria",
+      "addressRegion": "BC",
+      "postalCode": "V8X 1G1",
+      "addressCountry": "CA"
+    },
+    "openingHours": ["Mo-Fr 09:30-17:30","Sa 09:00-17:00","Su 12:00-16:00"]
+  }
+  </script>
+  </head>
+<body>
+
+<!-- ───────── NAV ───────── -->
+<nav class="site-nav" id="navbar">
+  <a href="#" class="nav-logo">Straight <span>Up</span> Cycles</a>
+  <div class="nav-links">
+    <a href="#bikes">Used Bikes</a>
+    <a href="#service">Service</a>
+    <a href="#brands">Brands</a>
+    <a href="#about">About</a>
+    <a href="tel:+12504801944" class="nav-cta"><i class="bi bi-telephone-fill"></i> (250) 480-1944</a>
+  </div>
+  <button class="nav-hamburger" id="menuToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="mobile-drawer" id="mobileDrawer">
+  <a href="#bikes" class="drawer-link">Used Bikes</a>
+  <a href="#service" class="drawer-link">Service</a>
+  <a href="#brands" class="drawer-link">Brands</a>
+  <a href="#about" class="drawer-link">About</a>
+  <a href="tel:+12504801944" class="drawer-cta drawer-link">
+    <i class="bi bi-telephone-fill"></i> Call (250) 480-1944
+  </a>
+</aside>
+
+
+<!-- ───────── HERO ───────── -->
+<section class="hero">
+  <!-- Massive spinning wheel (Hero Root) -->
+  <div class="wheel-light">
+    <div class="wheel-hub">
+      <div class="hub-ring" style="width:12%;height:12%;border-color:rgba(200,16,46,0.3);"></div>
+      <div class="hub-ring" style="width:5%;height:5%;background:rgba(200,16,46,0.2);"></div>
+    </div>
+  </div>
+
+  <div class="left-panel">
+    <div class="content-wrapper">
+      <p class="hero-eyebrow">Victoria's Bike Specialists</p>
+      <h1 class="display-heading">Ride<br>Without<br>Compromise.</h1>
+      <p class="hero-sub">
+        The only Campagnolo, Colnago &amp; Argon&nbsp;18 dealer in Victoria.
+        Custom builds, expert fitting, and 25 years of real cycling knowledge.
+      </p>
+      <div class="hero-actions">
+        <a href="tel:+12504801944" class="btn-primary-red">
+          <i class="bi bi-telephone-fill"></i> (250) 480-1944
+        </a>
+        <a href="#bikes" class="btn-outline-dark">
+          <i class="bi bi-bicycle"></i> Used Bikes
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <img src="images/cyclist-hero.jpg" alt="Road cyclist at dusk on a wet BC road" loading="eager" />
+  </div>
+
+  <div class="hero-strip">
+    <div class="strip-item"><i class="bi bi-geo-alt-fill"></i> <span><strong>#4-3198 Quadra St</strong> · Victoria BC</span></div>
+    <div class="strip-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri <strong>9:30–5:30</strong> · Sat <strong>9–5</strong> · Sun <strong>12–4</strong></span></div>
+    <div class="strip-item"><i class="bi bi-award-fill"></i> <span><strong>Island-exclusive</strong> Campagnolo · Colnago · Argon 18</span></div>
+  </div>
+</section>
+
+
+<!-- ───────── TICKER ───────── -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner">
+    KONA <span>·</span> ARGON 18 <span>·</span> MARINONI <span>·</span> COLNAGO <span>·</span> MOOTS <span>·</span> PARLEE <span>·</span> IBIS <span>·</span> CAMPAGNOLO <span>·</span> CUSTOM BUILDS <span>·</span> BIKE FITTING <span>·</span> EXPERT SERVICE <span>·</span> 25 YEARS EXPERIENCE <span>·</span>
+    KONA <span>·</span> ARGON 18 <span>·</span> MARINONI <span>·</span> COLNAGO <span>·</span> MOOTS <span>·</span> PARLEE <span>·</span> IBIS <span>·</span> CAMPAGNOLO <span>·</span> CUSTOM BUILDS <span>·</span> BIKE FITTING <span>·</span> EXPERT SERVICE <span>·</span> 25 YEARS EXPERIENCE <span>·</span>
+  </div>
+</div>
+
+
+<!-- ───────── QUICK ACTIONS ───────── -->
+<section class="quick-actions" id="service">
+  <div class="container px-4">
+    <div class="row g-3 g-md-4">
+      <div class="col-12 col-md-4 fade-up">
+        <a href="tel:+12504801944" class="action-card">
+          <div class="icon-wrap"><i class="bi bi-tools"></i></div>
+          <div class="action-card-text">
+            <h3>Book a Tune-Up</h3>
+            <p>Fast turnaround, expert mechanics. We keep your bike running like the day you bought it.</p>
+            <span class="action-arrow">Book Now <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-4 fade-up">
+        <a href="#bikes" class="action-card">
+          <div class="icon-wrap"><i class="bi bi-bicycle"></i></div>
+          <div class="action-card-text">
+            <h3>Used Bike Inventory</h3>
+            <p>Handpicked, inspected bikes across all categories. Incredible value on quality machines.</p>
+            <span class="action-arrow">Browse Bikes <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-md-4 fade-up">
+        <a href="https://maps.google.com/?q=4-3198+Quadra+St+Victoria+BC" target="_blank" class="action-card">
+          <div class="icon-wrap"><i class="bi bi-geo-alt-fill"></i></div>
+          <div class="action-card-text">
+            <h3>Visit Our Shop</h3>
+            <p>#4-3198 Quadra St, centrally located. Come in, test ride, and talk to someone who actually rides.</p>
+            <span class="action-arrow">Get Directions <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── DIFFERENTIATORS ───────── -->
+<section class="differentiators" id="about">
+  <div class="container px-4">
+    <div class="row mb-60 mb-md-5">
+      <div class="col-lg-6">
+        <p class="section-label fade-up">Why Straight Up Cycles</p>
+        <h2 class="display-heading section-title text-white fade-up">We Don't<br>Do Generic.</h2>
+      </div>
+      <div class="col-lg-5 offset-lg-1 d-flex align-items-end fade-up">
+        <p style="color:rgba(255,255,255,0.5); font-size:0.95rem; line-height:1.75;">Gerry Huizinga has spent 25+ years building the best-fitted, best-riding bikes in Victoria. No magic formulas. No pressure. Just honest expertise — and the region's most exclusive brand selection.</p>
+      </div>
+    </div>
+
+    <div class="row g-0">
+      <div class="col-md-3 col-6 fade-up">
+        <div class="diff-item">
+          <div class="diff-num">01</div>
+          <h4>Island-Exclusive Brands</h4>
+          <p>The only Campagnolo dealer on Vancouver Island, and Victoria's only Colnago & Argon 18 stockist.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 fade-up">
+        <div class="diff-item">
+          <div class="diff-num">02</div>
+          <h4>Custom Dream Builds</h4>
+          <p>We spec your bike from frame to saddle. Every component chosen for how you ride, not how it looks on a shelf.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 fade-up">
+        <div class="diff-item">
+          <div class="diff-num">03</div>
+          <h4>Expert Fitting Included</h4>
+          <p>Every bike that leaves our shop is fitted to its rider. An uncomfortable bike is a bike that doesn't get ridden.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 fade-up">
+        <div class="diff-item">
+          <div class="diff-num">04</div>
+          <h4>Zero Sales Pressure</h4>
+          <p>We're cyclists — road, cross, mountain, whatever rolls. We help you find the right bike, full stop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── BRANDS ───────── -->
+<section class="brands-section" id="brands">
+  <div class="container px-4">
+    <div class="row align-items-center mb-4">
+      <div class="col">
+        <p class="section-label mb-0">Our Brands</p>
+      </div>
+      <div class="col-auto">
+        <span style="font-size:0.82rem; color:var(--mid-gray);">Exclusive Victoria / Vancouver Island dealerships marked</span>
+      </div>
+    </div>
+    <div class="row align-items-center g-3">
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag exclusive">ARGON 18</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag exclusive">COLNAGO</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag exclusive">CAMPAGNOLO</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag">KONA</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag">MARINONI</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag">MOOTS</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag">PARLEE</div></div>
+      <div class="col-6 col-sm-4 col-md-2 text-center fade-up"><div class="brand-tag">IBIS</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── USED BIKES ───────── -->
+<section class="used-bikes" id="bikes">
+  <div class="container px-4">
+    <div class="row mb-4 mb-md-5 align-items-end">
+      <div class="col-md-7">
+        <p class="section-label fade-up">Current Used Inventory</p>
+        <h2 class="display-heading section-title fade-up">Hand-Picked.<br>Inspected. Ready.</h2>
+      </div>
+      <div class="col-md-5 text-md-end fade-up">
+        <p style="color:var(--mid-gray); font-size:0.9rem;">Every used bike is assessed and serviced by our mechanics before it hits the floor. Call for current stock — it moves fast.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bike-marquee">
+    <div class="bike-track">
+
+      <!-- Original 4 cards -->
+      <div class="bike-card">
+        <div class="bike-card-img">
+          <img src="images/bike.jpg" alt="Road Bike" loading="lazy" />
+          <span class="condition-badge">Excellent</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Road Bike</div>
+          <div class="bike-name">Colnago C60 — 54cm</div>
+          <div class="bike-specs">Carbon frame · 2×10 Campagnolo Chorus · Rim brakes · 700×25c</div>
+          <div class="bike-footer">
+            <div class="bike-price">$3,200</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card">
+        <div class="bike-card-img">
+          <img src="images/Mountain-Bike.jpg" alt="Mountain Bike" loading="lazy" />
+          <span class="condition-badge">Very Good</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Mountain Bike</div>
+          <div class="bike-name">Kona Process — Med</div>
+          <div class="bike-specs">Aluminium frame · 3×9 MicroShift · Hydraulic disc · 29×2.25"</div>
+          <div class="bike-footer">
+            <div class="bike-price">$1,450</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card">
+        <div class="bike-card-img">
+          <img src="images/cycle-cross.jpg" alt="Cyclocross Bike" loading="lazy" />
+          <span class="condition-badge">Good</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Cyclocross</div>
+          <div class="bike-name">Marinoni CX — 56cm</div>
+          <div class="bike-specs">Steel frame · 2×8 Shimano Tiagra · Disc brakes · 700×38c</div>
+          <div class="bike-footer">
+            <div class="bike-price">$1,100</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card">
+        <div class="bike-card-img">
+          <img src="images/city.jpg" alt="City Bike" loading="lazy" />
+          <span class="condition-badge">Excellent</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">City / Commuter</div>
+          <div class="bike-name">BMW Cruise Hybrid</div>
+          <div class="bike-specs">Aluminium frame · 3×9 Shimano XT · Rim brakes · Rack included</div>
+          <div class="bike-footer">
+            <div class="bike-price">$875</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Duplicated 4 cards for seamless loop -->
+      <div class="bike-card" aria-hidden="true">
+        <div class="bike-card-img">
+          <img src="images/bike.jpg" alt="" loading="lazy" />
+          <span class="condition-badge">Excellent</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Road Bike</div>
+          <div class="bike-name">Colnago C60 — 54cm</div>
+          <div class="bike-specs">Carbon frame · 2×10 Campagnolo Chorus · Rim brakes · 700×25c</div>
+          <div class="bike-footer">
+            <div class="bike-price">$3,200</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card" aria-hidden="true">
+        <div class="bike-card-img">
+          <img src="images/Mountain-Bike.jpg" alt="" loading="lazy" />
+          <span class="condition-badge">Very Good</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Mountain Bike</div>
+          <div class="bike-name">Kona Process — Med</div>
+          <div class="bike-specs">Aluminium frame · 3×9 MicroShift · Hydraulic disc · 29×2.25"</div>
+          <div class="bike-footer">
+            <div class="bike-price">$1,450</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card" aria-hidden="true">
+        <div class="bike-card-img">
+          <img src="images/cycle-cross.jpg" alt="" loading="lazy" />
+          <span class="condition-badge">Good</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">Cyclocross</div>
+          <div class="bike-name">Marinoni CX — 56cm</div>
+          <div class="bike-specs">Steel frame · 2×8 Shimano Tiagra · Disc brakes · 700×38c</div>
+          <div class="bike-footer">
+            <div class="bike-price">$1,100</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bike-card" aria-hidden="true">
+        <div class="bike-card-img">
+          <img src="images/city.jpg" alt="" loading="lazy" />
+          <span class="condition-badge">Excellent</span>
+        </div>
+        <div class="bike-card-body">
+          <div class="bike-type">City / Commuter</div>
+          <div class="bike-name">BMW Cruise Hybrid</div>
+          <div class="bike-specs">Aluminium frame · 3×9 Shimano XT · Rim brakes · Rack included</div>
+          <div class="bike-footer">
+            <div class="bike-price">$875</div>
+            <a href="tel:+12504801944" class="btn-inquire">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container px-4">
+    <div class="text-center mt-4 mt-md-5 fade-up">
+      <a href="tel:+12504801944" class="btn-primary-red" style="font-size:0.9rem; padding:14px 32px; width:100%; max-width:400px; justify-content:center;">
+        <i class="bi bi-telephone-fill"></i>&nbsp; Call to Check Current Inventory
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── TESTIMONIALS ───────── -->
+<section class="testimonials">
+  <div class="container px-4">
+    <div class="row mb-4 mb-md-5">
+      <div class="col-md-6">
+        <p class="section-label fade-up">Customer Reviews</p>
+        <h2 class="display-heading section-title fade-up">Riders<br>Trust Us.</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-scroll-wrap">
+    <div class="testimonial-scroll-inner container px-4">
+
+      <div class="testimonial-wrap fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <span class="quote-mark">"</span>
+          <blockquote>Went in with a brake problem and they handled it right away. When I asked to pay they said "come back when you need something." They will get all my bike business from now on — this is how you build a customer for life.</blockquote>
+          <div class="reviewer-name">Mark T.</div>
+          <div class="reviewer-detail">Google Review · Victoria, BC</div>
+        </div>
+      </div>
+
+      <div class="testimonial-wrap fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <span class="quote-mark">"</span>
+          <blockquote>Gerry spent nearly an hour with me just figuring out the right fit. No upsell, no nonsense. I've bought three bikes here over the years and each one has been perfect. Best shop on the island, no question.</blockquote>
+          <div class="reviewer-name">Sarah K.</div>
+          <div class="reviewer-detail">Long-time customer · Victoria, BC</div>
+        </div>
+      </div>
+
+      <div class="testimonial-wrap fade-up">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <span class="quote-mark">"</span>
+          <blockquote>If you're into high-end cycling, this is the only shop in Victoria worth visiting. They stock brands you literally cannot find anywhere else on Vancouver Island. The staff actually ride and know what they're talking about.</blockquote>
+          <div class="reviewer-name">Derek M.</div>
+          <div class="reviewer-detail">Strava athlete · Victoria, BC</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── CTA BAND ───────── -->
+<section class="cta-band">
+  <div class="container px-4">
+    <div class="row align-items-center">
+      <div class="col-md-7 mb-4 mb-md-0">
+        <h2 class="display-heading fade-up">Ready to Find<br>Your Bike?</h2>
+        <p class="mt-3 fade-up">Call us, stop by, or ask about our current used inventory. Zero pressure, straight-up advice.</p>
+      </div>
+      <div class="col-md-5 text-md-end fade-up">
+        <a href="tel:+12504801944" class="btn-white me-3">
+          <i class="bi bi-telephone-fill"></i> (250) 480-1944
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="container px-4">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <a href="#" class="footer-logo">Straight <span>Up</span> Cycles</a>
+        <p style="font-size:0.88rem; margin-top:16px; line-height:1.7;">Victoria's premium bike specialist since 2000. Exclusive dealer for Campagnolo, Colnago & Argon 18 on Vancouver Island.</p>
+        <div class="mt-3 d-flex gap-2">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="Strava"><i class="bi bi-activity"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4">
+        <h6>Navigate</h6>
+        <div class="d-flex flex-column gap-2" style="font-size:0.88rem;">
+          <a href="#bikes">Used Bikes</a>
+          <a href="#service">Service</a>
+          <a href="#brands">Brands</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <h6>Hours</h6>
+        <div style="font-size:0.85rem; line-height:2;">
+          Mon – Fri: 9:30 – 5:30 PM<br>
+          Saturday: 9:00 – 5:00 PM<br>
+          Sunday: 12:00 – 4:00 PM
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4">
+        <h6>Location</h6>
+        <p style="font-size:0.85rem; line-height:1.7;">#4-3198 Quadra St<br>Victoria, BC  V8X 1G1</p>
+        <a href="tel:+12504801944" style="font-size:1.1rem; font-weight:600; color:#fff;">(250) 480-1944</a>
+        <div class="mt-3">
+          <a href="https://maps.google.com/?q=4-3198+Quadra+St+Victoria+BC" target="_blank" class="map-placeholder">
+            <i class="bi bi-map"></i>
+            <span>Open in Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-legal">
+      <span>© 2025 Straight Up Cycles Ltd. All rights reserved.</span>
+      <span>#4-3198 Quadra St, Victoria BC · <a href="tel:+12504801944">(250) 480-1944</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ───────── STICKY MOBILE CALL BAR ───────── -->
+<div class="mobile-call-bar" role="complementary" aria-label="Call us">
+  <a href="tel:+12504801944">
+    <i class="bi bi-telephone-fill"></i>
+    Call Straight Up Cycles — (250) 480-1944
+  </a>
+</div>
+
+
+<!-- Local JS Assets -->
+<script src="js/bootstrap.bundle.min.js" defer></script>
+<script src="js/script.js" defer></script>
+
+</body>
+</html>

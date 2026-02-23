@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Straight Up Cycles — Hero Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #c8102e;
+      --red-dk: #8f0b20;
+      --black:  #080808;
+      --white:  #f5f2ec;
+    }
+
+    body { background: #111; font-family: 'DM Sans', sans-serif; }
+
+    /* ══════════════════════════════════════════
+       CONCEPT A — "The Night Ride"
+       Dark cinematic, grain texture, speed lines
+    ══════════════════════════════════════════ */
+    .hero-a {
+      position: relative;
+      min-height: 100vh;
+      background: var(--black);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hero background image layer */
+    .hero-a-bg {
+      position: absolute;
+      inset: 0;
+      background: url('cyclist-hero.jpg') center center / cover no-repeat;
+      opacity: 0.35;
+      z-index: 1;
+    }
+    .hero-a-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(8,8,8,0.92) 30%, rgba(8,8,8,0.4) 100%);
+    }
+
+    /* Radial glow from bottom-left */
+    .hero-a::before {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(200,16,46,0.18) 0%,
+        rgba(200,16,46,0.04) 45%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+
+    /* Grain overlay */
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+    }
+
+    /* Speed lines SVG background */
+    .speed-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .speed-lines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -12deg,
+        transparent,
+        transparent 120px,
+        rgba(255,255,255,0.012) 120px,
+        rgba(255,255,255,0.012) 121px
+      );
+    }
+
+    /* Large background wheel silhouette */
+    .wheel-bg {
+      position: absolute;
+      right: -8vw;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 68vw;
+      height: 68vw;
+      max-width: 780px;
+      max-height: 780px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.045);
+      animation: wheelSpin 40s linear infinite;
+    }
+    .wheel-bg::before {
+      content: '';
+      position: absolute;
+      inset: 8%;
+      border-radius: 50%;
+      border: 1px solid rgba(200,16,46,0.12);
+    }
+    .wheel-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(200,16,46,0.06) 2deg,
+        transparent 4deg,
+        transparent 34deg,
+        rgba(200,16,46,0.06) 36deg,
+        transparent 38deg,
+        transparent 68deg,
+        rgba(200,16,46,0.06) 70deg,
+        transparent 72deg,
+        transparent 102deg,
+        rgba(200,16,46,0.06) 104deg,
+        transparent 106deg,
+        transparent 136deg,
+        rgba(200,16,46,0.06) 138deg,
+        transparent 140deg,
+        transparent 170deg,
+        rgba(200,16,46,0.06) 172deg,
+        transparent 174deg,
+        transparent 204deg,
+        rgba(200,16,46,0.06) 206deg,
+        transparent 208deg,
+        transparent 238deg,
+        rgba(200,16,46,0.06) 240deg,
+        transparent 242deg,
+        transparent 272deg,
+        rgba(200,16,46,0.06) 274deg,
+        transparent 276deg,
+        transparent 306deg,
+        rgba(200,16,46,0.06) 308deg,
+        transparent 310deg,
+        transparent 340deg,
+        rgba(200,16,46,0.06) 342deg,
+        transparent 344deg
+      );
+    }
+    /* Inner hub rings */
+    .wheel-hub {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hub-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    @keyframes wheelSpin { to { transform: translateY(-50%) rotate(360deg); } }
+
+    /* Red accent slash */
+    .red-slash {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, transparent, var(--red) 30%, var(--red) 70%, transparent);
+    }
+
+    .hero-a .content {
+      position: relative;
+      z-index: 10;
+      padding: 0 6vw;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: riseIn 0.6s 0.2s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .eyebrow-line {
+      width: 36px;
+      height: 2px;
+      background: var(--red);
+    }
+    .eyebrow-text {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      font-weight: 600;
+    }
+    .eyebrow-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid rgba(200,16,46,0.4);
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    .hero-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 12vw, 10.5rem);
+      line-height: 0.88;
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+    .hero-headline .line-1 {
+      display: block;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      animation: revealRight 0.75s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .hero-headline .line-2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      animation: revealRight 0.75s 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .hero-headline .line-3 {
+      display: block;
+      opacity: 0;
+      clip-path: inset(0 100% 0 0);
+      animation: revealRight 0.75s 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .line-3 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      max-width: 400px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: riseIn 0.7s 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      opacity: 0;
+      animation: riseIn 0.7s 1.05s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    .btn-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 16px 32px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 0 0 0 rgba(200,16,46,0);
+    }
+    .btn-call:hover {
+      background: var(--red-dk);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200,16,46,0.35);
+    }
+    .phone-icon { font-size: 1rem; }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 15px 28px;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.4);
+      color: #fff;
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Stats row */
+    .hero-stats {
+      position: absolute;
+      bottom: 48px;
+      left: 6vw;
+      display: flex;
+      gap: 48px;
+      opacity: 0;
+      animation: riseIn 0.7s 1.3s cubic-bezier(0.22,1,0.36,1) forwards;
+      z-index: 10;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.04em;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-num span { color: var(--red); }
+    .stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+      align-self: stretch;
+    }
+
+    /* Hours pill top-right */
+    .hours-pill {
+      position: absolute;
+      top: 36px;
+      right: 40px;
+      z-index: 10;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 10px;
+      padding: 16px 22px;
+      opacity: 0;
+      animation: riseIn 0.7s 1.5s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+    .hours-pill-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      padding: 4px 0;
+    }
+    .hours-pill-row .day { color: rgba(255,255,255,0.25); font-size: 0.74rem; }
+    .open-now {
+      display: inline-block;
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-left: 8px;
+    }
+
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes revealRight {
+      from { opacity: 1; clip-path: inset(0 100% 0 0); }
+      to   { opacity: 1; clip-path: inset(0 0% 0 0); }
+    }
+
+    @media (max-width: 768px) {
+      .wheel-bg { right: -30vw; width: 110vw; height: 110vw; opacity: 0.4; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; bottom: 90px; }
+      .hours-pill { display: none; }
+    }
+
+
+    /* ══════════════════════════════════════════
+       CONCEPT B — "The White Line"
+       Light / minimal / editorial feel
+    ══════════════════════════════════════════ */
+    .hero-b {
+      position: relative;
+      min-height: 100vh;
+      background: var(--white);
+      overflow: hidden;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero-b .left-panel {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 55%;
+      padding: 10vh 6vw 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+    }
+    .hero-b .right-panel {
+      flex: 1;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-b .right-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at 60% 50%,
+        rgba(200,16,46,0.15) 0%,
+        transparent 65%
+      );
+    }
+    /* Wheel on dark right side */
+    .wheel-light {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      animation: wheelSpin 50s linear infinite;
+    }
+    .wheel-light::before {
+      content: '';
+      position: absolute;
+      inset: 12%;
+      border-radius: 50%;
+      border: 1px solid rgba(200,16,46,0.2);
+    }
+
+    .hero-b .label-b {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .label-b::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .h1-b {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      margin-bottom: 28px;
+    }
+
+    .sub-b {
+      font-size: 0.95rem;
+      line-height: 1.78;
+      color: #777;
+      font-weight: 300;
+      max-width: 380px;
+      margin-bottom: 44px;
+      border-left: 2px solid var(--red);
+      padding-left: 16px;
+    }
+
+    .ctas-b { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--black);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      padding: 15px 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-dark:hover { background: var(--red); color: #fff; transform: translateY(-2px); }
+
+    .btn-outline-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: transparent;
+      color: var(--black);
+      text-decoration: none;
+      border: 1.5px solid rgba(0,0,0,0.2);
+      border-radius: 7px;
+      padding: 14px 26px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-dark:hover { border-color: var(--red); color: var(--red); }
+
+    /* bottom strip */
+    .bottom-strip-b {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      padding: 0 6vw;
+      gap: 0;
+      z-index: 5;
+    }
+    .strip-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      padding: 0 20px;
+    }
+    .strip-item:first-child { padding-left: 0; }
+    .strip-item:last-child { border-right: none; }
+    .strip-item i { color: var(--red); font-size: 0.9rem; }
+    .strip-item strong { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      .hero-b { flex-direction: column; }
+      .hero-b .left-panel { flex: none; padding-bottom: 60px; }
+      .hero-b .right-panel { flex: 0 0 40vh; clip-path: none; }
+      .bottom-strip-b { display: none; }
+    }
+
+    /* ══════════════
+       SECTION LABELS
+    ══════════════ */
+    .concept-label {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border-bottom: 1px solid #222;
+    }
+    .concept-label strong { color: var(--red); }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+</head>
+<body>
+
+<!-- ──────────────────────────────────
+     CONCEPT A: "THE NIGHT RIDE"
+     Dark, cinematic, premium
+────────────────────────────────── -->
+<div class="concept-label">Concept A — <strong>"The Night Ride"</strong> · Dark Cinematic · Drop in your hero photo behind the wheel</div>
+
+<section class="hero-a">
+  <div class="hero-a-bg"></div>
+  <div class="grain"></div>
+  <div class="speed-lines"></div>
+
+  <!-- Giant wheel silhouette -->
+  <div class="wheel-bg">
+    <div class="wheel-hub">
+      <div class="hub-ring" style="width:12%;height:12%;border-color:rgba(200,16,46,0.3);"></div>
+      <div class="hub-ring" style="width:5%;height:5%;background:rgba(200,16,46,0.2);"></div>
+    </div>
+  </div>
+
+  <div class="red-slash"></div>
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Victoria, BC · Est. 2000</span>
+      <span class="eyebrow-badge">Island Exclusive</span>
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="line-1">Straight</span>
+      <span class="line-2">Up</span>
+      <span class="line-3"><em>Cycles</em></span>
+    </h1>
+
+    <p class="hero-sub">
+      Victoria's only Campagnolo, Colnago &amp; Argon 18 dealer.
+      Custom builds. Expert fitting. Zero pressure.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="tel:+12504801944" class="btn-call">
+        <span class="phone-icon"><i class="bi bi-telephone-fill"></i></span>
+        (250) 480-1944
+      </a>
+      <a href="#bikes" class="btn-ghost">
+        <i class="bi bi-bicycle"></i> View Used Bikes
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">25<span>+</span></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Island-Exclusive Brands</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num"><span>#</span>1</div>
+      <div class="stat-label">Campagnolo Dealer on VI</div>
+    </div>
+  </div>
+
+  <!-- Hours pill -->
+  <div class="hours-pill">
+    <div class="hours-pill-row">
+      <span class="day">Mon – Fri</span>
+      <span>9:30 – 5:30 PM</span>
+    </div>
+    <div class="hours-pill-row">
+      <span class="day">Saturday</span>
+      <span>9:00 – 5:00 PM <span class="open-now">Open</span></span>
+    </div>
+    <div class="hours-pill-row">
+      <span class="day">Sunday</span>
+      <span>12:00 – 4:00 PM</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ──────────────────────────────────
+     CONCEPT B: "THE WHITE LINE"
+     Light, editorial, premium boutique
+────────────────────────────────── -->
+<div class="concept-label" style="margin-top:2px;">Concept B — <strong>"The White Line"</strong> · Light Editorial · Swap the dark panel for a real photo</div>
+
+<section class="hero-b">
+  <div class="left-panel">
+    <p class="label-b">Victoria's Bike Specialists</p>
+    <h1 class="h1-b">Ride<br>Without<br>Compromise.</h1>
+    <p class="sub-b">
+      The only Campagnolo, Colnago &amp; Argon&nbsp;18 dealer in Victoria.
+      Custom builds, expert fitting, and 25 years of real cycling knowledge.
+    </p>
+    <div class="ctas-b">
+      <a href="tel:+12504801944" class="btn-dark">
+        <i class="bi bi-telephone-fill"></i> (250) 480-1944
+      </a>
+      <a href="#bikes" class="btn-outline-dark">
+        <i class="bi bi-bicycle"></i> Used Bikes
+      </a>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="wheel-light"></div>
+    <img src="cyclist-hero.jpg" alt="Road cyclist at dusk on a wet BC road" style="
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; z-index:2; opacity:0.8;" />
+  </div>
+
+  <div class="bottom-strip-b">
+    <div class="strip-item"><i class="bi bi-geo-alt-fill"></i> <span><strong>#4-3198 Quadra St</strong> · Victoria BC</span></div>
+    <div class="strip-item"><i class="bi bi-clock-fill"></i> <span>Mon–Fri <strong>9:30–5:30</strong> · Sat <strong>9–5</strong> · Sun <strong>12–4</strong></span></div>
+    <div class="strip-item"><i class="bi bi-award-fill"></i> <span><strong>Island-exclusive</strong> Campagnolo · Colnago · Argon 18</span></div>
+  </div>
+</section>
+
+</body>
+</html>
