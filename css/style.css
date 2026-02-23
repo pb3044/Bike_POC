@@ -212,7 +212,7 @@ body {
   pointer-events: auto;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
   .nav-links {
     display: flex;
   }
@@ -222,6 +222,14 @@ body {
   .mobile-drawer,
   .drawer-backdrop {
     display: none !important;
+  }
+}
+@media (max-width: 991px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-hamburger {
+    display: flex;
   }
 }
 
@@ -520,7 +528,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .site-nav {
     padding: 8px 16px; /* Reduced vertical footprint */
   }
@@ -548,12 +556,21 @@ body {
   .hero .right-panel {
     flex: none;
     height: 45vh;
-    min-height: 280px;
-    clip-path: none;
-  }
+  min-height: 280px;
+  clip-path: none;
+  background: var(--black);
+}
+.hero .right-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.6) 100%);
+  z-index: 3;
+}
   .hero .left-panel {
     flex: none;
-    padding: 40px 24px 36px;
+    padding: 60px 24px 40px;
+    z-index: 10;
   }
   .hero h1 {
     font-size: clamp(3.2rem, 12vw, 4.5rem);
@@ -894,18 +911,31 @@ body {
 .bike-marquee:hover .bike-track {
   animation-play-state: paused;
 }
+@keyframes scrollBikes {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% + 100vw)); }
+}
 .bike-track {
   display: flex;
   gap: 20px;
+  padding: 0 20px;
   animation: scrollBikes 28s linear infinite;
   width: max-content;
 }
-@keyframes scrollBikes {
-  from {
-    transform: translateX(0);
+@media (min-width: 1200px) {
+  .bike-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 30px;
+    padding: 0 40px;
+    animation: none;
   }
-  to {
-    transform: translateX(-50%);
+  .bike-track > .bike-card {
+    flex: none;
+    min-width: 0;
   }
 }
 .bike-track > .bike-card {
